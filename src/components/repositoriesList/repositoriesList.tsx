@@ -16,9 +16,9 @@ const RepositoriesList: React.FC = () => {
     searchRepositories(term)
   };
   return <div>
-    <form onSubmit = {onSubmit}>
-      <input id = 'search-repositories' value = {term} onChange = {e => setTerm(e.target.value)}/>
-      <button id = 'search-button'>Search</button>
+    <form id = 'search-repositories-form' onSubmit = {onSubmit}>
+      <input id = 'search-repositories-input' className = 'form-element' value = {term} onChange = {e => setTerm(e.target.value)}/>
+      <button id = 'search-repositories-button' className = 'form-element'>Search</button>
       {error && <h3 id = 'error-notification'>Network Error</h3>}
       {loading && <h3 id = 'loading-spinner'>Loading...</h3>}
       {!error && !loading &&
