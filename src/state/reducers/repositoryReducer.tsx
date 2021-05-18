@@ -1,10 +1,10 @@
 import { Action } from '../actions';
-import { ActionType } from '../action-types'
+import { ActionType, SearchState } from '../action-types';
 
 interface RepositoriesState {
   loading: boolean;
   error: string | null;
-  data: string[];
+  data: SearchState[];
 }
 
 const initalState = {
