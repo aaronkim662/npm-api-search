@@ -1,4 +1,4 @@
-import { ActionType } from '../action-types';
+import { ActionType, SearchState } from '../action-types';
 
 interface SearchRepositoriesAction {
   type: ActionType.SEARCH_REPOSITORIES;
@@ -6,7 +6,7 @@ interface SearchRepositoriesAction {
 
 interface SearchRepositoriesSuccessAction {
   type: ActionType.SEARCH_REPOSITORIES_SUCCESS;
-  payload: string[];
+  payload: SearchState[];
 }
 
 interface SearchRepositoriesErrorAction {
