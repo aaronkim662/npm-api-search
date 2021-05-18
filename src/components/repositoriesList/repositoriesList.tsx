@@ -4,6 +4,7 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 import './repositoriesList.sass'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import CellComponents from "../cellComponent/cellComponent";
 
 const RepositoriesList: React.FC = () => {
   const [term, setTerm] = useState('');
@@ -14,9 +15,9 @@ const RepositoriesList: React.FC = () => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     searchRepositories(term)
   };
+
   return <div>
     <form id = 'search-repositories-form' onSubmit = {onSubmit}>
       <div id = 'search-repositories-box'>
@@ -29,11 +30,9 @@ const RepositoriesList: React.FC = () => {
       {error && <h3 id = 'error-notification'>Network Error</h3>}
       {loading && <h3 id = 'loading-spinner'>Loading...</h3>}
       {!error && !loading &&
-        data.map((repo) =>
-          <div key = {repo.name}>
-            <div>{repo.name}</div>
-            <div>{repo.description}</div>
-            <div>{repo.link}</div>
+        data.map((repo, index) =>
+          <div key = {term + '_' + index}>
+            <CellComponents name = {repo.name} description = {repo.description} link = {repo.link}/>
           </div>
         )
       }
