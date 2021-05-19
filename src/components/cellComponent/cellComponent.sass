@@ -1,15 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap')
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap')
+@import '../app/app.sass'
 
 .search-cell
-  font-family: 'Roboto', sans-serif
+  font-family: $font-family
   border-bottom: groove
   margin-top: 20px
-  margin-right: 2%
+  margin-right: $margin-percentage
 
-.search-cell-name
-  font-weight: bold
+.search-block
+  margin-bottom: 5px
 
-.search-cell-description
-  font-weight: light
+#search-cell-name
+  font-weight: 900
 
-.search-cell-link
+#search-cell-description
+  font-weight: 100
+
+#search-cell-link
+  text-decoration: none
+  color: $primary-color
