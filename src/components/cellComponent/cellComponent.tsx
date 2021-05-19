@@ -4,9 +4,9 @@ import './cellComponent.sass';
 const CellComponents: React.FC<SearchState> = (props) => {
   return (
     <div className = 'search-cell'>
-      <div className = 'search-cell-name'>Name: {props.name}</div>
-      <div className = 'search-cell-description'>Description: {props.description}</div>
-      <div className = 'search-cell-link'>Link: {props.link}</div>
+      <div id = 'search-cell-name' className = 'search-block'>{props.name}</div>
+      <div id = 'search-cell-description' className = 'search-block'>{props.description}</div>
+      <div onClick = {() => window.open(props.link, '_blank')} id = 'search-cell-link' className = 'search-block'>{props.name}</div>
     </div>
   )
 }
