@@ -2,8 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
- - Fork the repo and `npm install` from the directory.
- - Run `npm start`
+Fork the repo and `npm install` from the directory. <br />
+
+Run `npm start`
 
 # Description
 This app is meant for searching npm packages.
