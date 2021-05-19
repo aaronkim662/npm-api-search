@@ -1,23 +1,27 @@
+@import '../app/app.sass'
+
+%input-button-shared
+  border-style: groove
+  border-radius: 5px
+
 #search-repositories-form
-  padding-left: 2%
+  padding-left: $margin-percentage
   margin-top: 10px
 
 #search-repositories-box
   display: flex
 
 #search-repositories-input-container
+  @extend %input-button-shared
   display: flex
-  border-style: groove
-  border-radius: 5px
 
 #search-repositories-input
   border: none
   outline: none
 
 #search-repositories-button
-  border-style: groove
-  border-radius: 5px
+  @extend %input-button-shared
   border-color: lightgrey
 
 .input-icon
-  color: grey
+  color: lightgrey
