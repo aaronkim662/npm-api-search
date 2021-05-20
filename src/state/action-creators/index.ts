@@ -21,8 +21,16 @@ export const searchRepositories = (term: string) => {
           name: result.package.name,
           description: result.package.description,
           link: result.package.links.npm
+          // ,
+          // score: {
+          //   maintenance: result.score.detail.maintenance,
+          //   popularity: result.score.detail.popularity,
+          //   quality: result.score.detail.quality,
+          //   searchScore: result.searchScore
+          // }
         }
       })
+
       dispatch({
         type: ActionType.SEARCH_REPOSITORIES_SUCCESS,
         payload: names
