@@ -9,6 +9,8 @@ import CellComponents from "../cellComponent/cellComponent";
 const RepositoriesList: React.FC = () => {
   const [term, setTerm] = useState('');
 
+  const [filter, setFilter] = useState('Filter By');
+
   const { searchRepositories } = useActions();
 
   const { data, error, loading} = useTypedSelector((state) => state.repositories);
