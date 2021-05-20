@@ -13,7 +13,7 @@ const RepositoriesList: React.FC = () => {
 
   const { searchRepositories } = useActions();
 
-  const { data, error, loading} = useTypedSelector((state) => state.repositories);
+  let { data, error, loading} = useTypedSelector((state) => state.repositories);
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
