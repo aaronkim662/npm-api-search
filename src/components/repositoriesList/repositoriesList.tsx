@@ -45,13 +45,22 @@ const RepositoriesList: React.FC = () => {
           <option value = 'A-Z'>A-Z</option>
           <option value = 'Z-A'>Z-A</option>
         </select>
+
+        {/* <select value = {sort} onChange = {filterRepos} id = 'repositories-sort-button'>
+          <option value = ''>Sort By</option>
+          <option value = 'optimal'>Optimal</option>
+          <option value = 'popularity'>Popularity</option>
+          <option value = 'maintenance'>Maintenance</option>
+          <option value = 'quality'>Quality</option>
+        </select> */}
+
       </div>
       {error && <h3 id = 'error-notification'>Network Error</h3>}
       {loading && <h3 id = 'loading-spinner'>Loading...</h3>}
       {!error && !loading &&
         data.map((repo, index) =>
           <div key = {term + '_' + index}>
-            <CellComponents name = {repo.name} description = {repo.description} link = {repo.link}/>
+              // score = {repo.score}
           </div>
         )
       }
