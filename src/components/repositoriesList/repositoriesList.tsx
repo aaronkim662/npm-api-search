@@ -20,6 +20,17 @@ const RepositoriesList: React.FC = () => {
     searchRepositories(term);
   };
 
+  const filterRepos = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const filtered = event.target.value
+    setFilter(filtered)
+    // console.log('here', event.target.value, filter)
+    if (filtered === 'A-Z') {
+      data = data.sort((a, b) => (a.name > b.name ? 1: -1));
+    }else if(filtered === 'Z-A') {
+      data = data.sort((a, b) => (a.name > b.name ? -1: 1));
+    }
+  }
+
   return <div>
     <form id = 'search-repositories-form' onSubmit = {onSubmit}>
       <div id = 'search-repositories-box'>
