@@ -39,6 +39,11 @@ const RepositoriesList: React.FC = () => {
           <input id = 'search-repositories-input' className = 'form-element' placeholder = 'Search' value = {term} onChange = {e => setTerm(e.target.value)}/>
         </div>
         <button id = 'search-repositories-button' className = 'form-element'>Search</button>
+        <select value = {filter} placeholder = 'Sort By' onChange = {filterRepos} id = 'repositories-filter-button'>
+          <option value = ''>Filter By</option>
+          <option value = 'A-Z'>A-Z</option>
+          <option value = 'Z-A'>Z-A</option>
+        </select>
       </div>
       {error && <h3 id = 'error-notification'>Network Error</h3>}
       {loading && <h3 id = 'loading-spinner'>Loading...</h3>}
