@@ -9,7 +9,7 @@ import CellComponents from "../cellComponent/cellComponent";
 const RepositoriesList: React.FC = () => {
   const [term, setTerm] = useState('');
 
-  const [filter, setFilter] = useState('Filter By');
+  const [filter, setFilter] = useState('');
 
   const { searchRepositories } = useActions();
 
@@ -40,7 +40,8 @@ const RepositoriesList: React.FC = () => {
           <input id = 'search-repositories-input' className = 'form-element' placeholder = 'Search' value = {term} onChange = {e => setTerm(e.target.value)}/>
         </div>
         <button id = 'search-repositories-button' className = 'form-element'>Search</button>
-        <select value = {filter} placeholder = 'Sort By' onChange = {filterRepos} id = 'repositories-filter-button'>
+
+        <select value = {filter} onChange = {filterRepos} id = 'repositories-filter-button'>
           <option value = ''>Filter By</option>
           <option value = 'A-Z'>A-Z</option>
           <option value = 'Z-A'>Z-A</option>
@@ -60,7 +61,12 @@ const RepositoriesList: React.FC = () => {
       {!error && !loading &&
         data.map((repo, index) =>
           <div key = {term + '_' + index}>
+            <CellComponents
+              name = {repo.name}
+              description = {repo.description}
+              link = {repo.link}
               // score = {repo.score}
+            />
           </div>
         )
       }
