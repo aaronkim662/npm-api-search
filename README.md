@@ -9,4 +9,3 @@ Run `npm start`
 # Description
 This app is meant for searching npm packages.
 Using the npm api, this app returns your searched item(s). (Up to 20)
-
